@@ -16,7 +16,7 @@ So until a fix is made in vanilla Rimworld for this, just use this mod to preven
 
 ## Install instructions
 
-Just download this mod from [github](https://github.com/DoctorVanGogh/Rimworld-ButcherMoodFix) or the [Steam workshop](http://steamcommunity.com/workshop/browse/?appid=294100) (once it's uploaded).
+Just download this mod from [github](https://github.com/DoctorVanGogh/Rimworld-ButcherMoodFix) or the [Steam workshop](http://steamcommunity.com/sharedfiles/filedetails/?id=955427965).
 Put the mod as far up in the load order as possible (there's actually no reason at all not to put it immediately below the 'CORE' mod). Since this mod completely rewrites parts of the butchering code it should be loaded before any other mods that modify that code. Any 3rd party mod that actually replaces (and not just modifies) butchering code will not work with this mod - you'll have to pick one or the other.
 
 ## Powered by Harmony
