@@ -1,8 +1,10 @@
 [![RimWorld Alpha 17](https://img.shields.io/badge/RimWorld-Alpha%2017-brightgreen.svg)](http://rimworldgame.com/)
 
-# Rimworld butcher mood fix
+# Rimworld butcher & prisoner feed fixes
 
-## Contents
+## Fixes
+
+### Butchering fix
 
 Fixes a bug in Rimworld A17 where any butcher jobs targetting human corpses will throw an error and never complete (to be restarted again &amp; again) if the executing pawn does not have a 'mood' property in it's needs tab.
 
@@ -13,6 +15,12 @@ A case where this might happen is Allestor's [Misc Robots++](http://steamcommuni
 Funnily enough the vanilla code checks if any intended recipient of the '_We butchered humanlike_' debuff can actually get such a mood, but just assumes the butcher itself can always get the '_*I* butchered humanlike_' debuff.
 
 So until a fix is made in vanilla Rimworld for this, just use this mod to prevent the issue from cropping up if you use any mods that add Pawns with no 'mood' need who might 'baconify' certain corpses...
+
+### Prisoner feeding fix
+
+Fixes a bug in Rimworld where feeding an incapacitated prisoner from a Nutrient dispenser by a non person pawn (aka a robot) will log an error each time (Job will be executed though).
+
+Again, the buggy code is all vanilla - it just takes a mod to expose the error, since non-person pawns capable of feeding prisoners are not part of vanilla. 
 
 ## Install instructions
 
