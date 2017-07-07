@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Butcher Mood Fix</name>
+	<name>Butcher Mood &amp; prisoner feed fixes</name>
 	<author>DoctorVanGogh</author>
 	<targetVersion>0.17.1557</targetVersion>
     <url>https://github.com/DoctorVanGogh/Rimworld-ButcherMoodFix</url>
 	<description>
-        Fixes a bug in Alpha 17 where butchering a human corpse by a pawn with no 'mood' need always throws errors and never completes the job.
+Fixes some small bugs in the vanilla base game (robot related)	
+ - Butchering a human corpse by a pawn with no 'mood' need (example: a robot) always throws errors and never completes the job
+ - Feeding an incapacitated prisoner with a non-person pawn (example: a robot) from a Nutrient dispenser logs an error
+
+Version: 1.1
     </description>
 </ModMetaData>

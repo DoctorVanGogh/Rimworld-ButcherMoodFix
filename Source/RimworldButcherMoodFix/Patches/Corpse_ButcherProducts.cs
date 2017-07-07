@@ -7,7 +7,7 @@ using Harmony;
 using RimWorld;
 using Verse;
 
-namespace DoctorVanGogh.RimworldButcherMoodFix.Patches {
+namespace DoctorVanGogh.RimworldFixes.Patches {
 
     [HarmonyPatch(typeof(Corpse), nameof(Corpse.ButcherProducts))]
     [SuppressMessage("ReSharper", "UnusedMember.Global")]

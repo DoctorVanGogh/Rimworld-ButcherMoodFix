@@ -7,10 +7,11 @@
     <ProjectGuid>{0CD8F21A-30FF-40D9-BBC5-AF781B819C2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DoctorVanGogh.RimworldButcherMoodFix</RootNamespace>
-    <AssemblyName>ButcherMoodFix</AssemblyName>
+    <RootNamespace>DoctorVanGogh.RimworldFixes</RootNamespace>
+    <AssemblyName>RimworldFixes</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ButcherMoodFix.cs" />
     <Compile Include="Patches\Corpse_ButcherProducts.cs" />
+    <Compile Include="Patches\FoodUtility_BestFoodSourceOnMap_AnonStorey259.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
