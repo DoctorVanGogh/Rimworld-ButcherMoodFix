@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using Harmony;
 using RimWorld;
@@ -7,7 +9,32 @@ using Verse;
 
 namespace DoctorVanGogh.RimworldFixes.Patches {
 
+    [HarmonyPatch]
     class FoodUtility_BestFoodSourceOnMap_AnonStorey259 {
+
+        static MethodInfo TargetMethod() {
+            // private nested anon type can't have it's patches declared by attributes - need to look up type at runtime
+            Type fu = typeof(RimWorld.FoodUtility);
+            Type at = AccessTools.FirstInner(fu, t => t.Name.StartsWith("<BestFoodSourceOnMap>"));
+            if (at == null) {
+                Log.Warning("Could not find FoodUtility.BestFoodSourceOnMap anon subtype - not patching nutrient dispenser code");
+                return null;
+            }
+
+            MethodInfo[] methods =
+                at.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
+                  .Select(mi => new {mi, rt = mi.ReturnType, p = mi.GetParameters()})
+                  .Where(t => t.rt == typeof(bool) && t.p.Length == 1 && t.p[0].ParameterType == typeof(Thing))
+                  .Select(t => t.mi)
+                  .ToArray();
+
+            if (methods.Length != 2) {
+                Log.Warning("Could not find FoodUtility.BestFoodSourceOnMap predicates - not patching nutrient dispenser code");
+                return null;
+            }
+            return methods[1];
+        }
+
 
         public static bool IsIngestibleBetterThanDesperate(Thing t) {
             return (t is Building_NutrientPasteDispenser
