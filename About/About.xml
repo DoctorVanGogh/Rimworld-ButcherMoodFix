@@ -9,6 +9,6 @@ Fixes some small bugs in the vanilla base game (robot related)
  - Butchering a human corpse by a pawn with no 'mood' need (example: a robot) always throws errors and never completes the job
  - Feeding an incapacitated prisoner with a non-person pawn (example: a robot) from a Nutrient dispenser logs an error
 
-Version: 1.1
+Version: 1.2
     </description>
 </ModMetaData>
